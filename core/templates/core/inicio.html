@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Hola desde MySQL</title>
+</head>
+<body>
+  <h1>Hola desde MySQL! esta es una pagina de practicas</h1>
+  <p>Motor de base de datos: {{ motor }}</p>
+  <p>Host: {{ host }}</p>
+  <nav aria-label="Enlaces rápidos">
+    <p>
+      <strong>Páginas:</strong>
+      {% for enlace in enlaces_paginas %}
+        <a href="{{ enlace.url }}">{{ enlace.titulo }}</a>{% if not forloop.last %} · {% endif %}
+      {% empty %}
+        No hay páginas disponibles.
+      {% endfor %}
+    </p>
+  </nav>
+</body>
+</html>
